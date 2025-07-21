@@ -10,7 +10,7 @@
         const selectCurrency = document.getElementById("selectCurrency").value.toUpperCase();
         const numCurrency = parseFloat(document.getElementById("numCurrency").value);
 
-        fetch('https://api.currencyapi.com/v3/latest?apikey=cur_live_MzQySKY3FBCtRj4qSioZ8hZRV40Xy09P0T5qLCiV&currencies=EUR%2CUSD%2CCAD')
+        fetch('https://api.currencyapi.com/v3/latest?apikey=cur_live_MzQySKY3FBCtRj4qSioZ8hZRV40Xy09P0T5qLCiV&currencies=EUR%2CUSD%2CCAD&base_currency=GBP')
             .then(res => res.json())
             .then(json => {
                 if (json.data[selectCurrency]) {
@@ -35,7 +35,7 @@
         <form>
         <label for="numCurrency">Amount In GBP:</label><br>
         <input type="number" id="numCurrency" name="numCurrency"><br>
-        <label for="selectCurrency">Currency:</label><br>
+        <label for="selectCurrency">Currency(Abbreviation):</label><br>
         <input type="text" id="selectCurrency" name="selectCurrency"><br>
         <input id = "submitButton" type="button" value="Submit" onclick="currencyConversion(event)">
         </form> 
