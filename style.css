@@ -101,6 +101,10 @@
   color: #ffffff;
   font-family: 'Ariel'- sans-serif;
   text-decoration-color: #fff;
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
     
 
