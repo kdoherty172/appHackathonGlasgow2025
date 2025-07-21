@@ -7,6 +7,10 @@
         body {
             font-family: 'Arial', sans-serif;
         }
+        p{
+            font-family: 'Arial', sans-serif;
+            color: #
+        }
 
         .navbar {
             display: flex;
@@ -72,6 +76,13 @@
             /* Change the background color on hover */
             color: #ffd700;
         }
+        footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(255 127 39);
+  color: #ffffff;
+  font-family: 'Ariel'- sans-serif;
+}
     
 
 
