@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <script>
+    function currencyConversion(event) {
+        event.preventDefault(); // prevent form refresh
+
+        const selectCurrency = document.getElementById("selectCurrency").value.toUpperCase();
+        const numCurrency = parseFloat(document.getElementById("numCurrency").value);
+
+        fetch('https://api.currencyapi.com/v3/latest?apikey=cur_live_MzQySKY3FBCtRj4qSioZ8hZRV40Xy09P0T5qLCiV&currencies=EUR%2CUSD%2CCAD')
+            .then(res => res.json())
+            .then(json => {
+                if (json.data[selectCurrency]) {
+                    const value = json.data[selectCurrency].value;
+                    document.getElementById('output').innerText = `Value: ${(value * numCurrency).toFixed(2)}`;
+                } else {
+                    document.getElementById('output').innerText = 'Currency not found in response';
+                }
+            })
+            .catch(err => {
+                console.error('Fetch error:', err);
+                document.getElementById('output').innerText = 'Error loading data';
+            });
+    }
+</script>
+
+</head>
+
+<body>
+    <main>
+
+        <form>
+        <label for="numCurrency">Amount In GBP:</label><br>
+        <input type="number" id="numCurrency" name="numCurrency"><br>
+        <label for="selectCurrency">Currency:</label><br>
+        <input type="text" id="selectCurrency" name="selectCurrency"><br>
+        <input id = "submitButton" type="button" value="Submit" onclick="currencyConversion(event)">
+        </form> 
+
+
+        <div id = "currencyBlock">
+            <p id = "output">  </p>
+        </div>
+    </main>
+   <footer>
+
+   </footer> 
+</body>
+</html>
