@@ -78,7 +78,7 @@
             border-radius: 5px;
         }
 
-        .btn {
+        .btn, #submitButton {
             background-color: #ffd700;
             color: #000;
             border: none;
@@ -89,11 +89,13 @@
             border-color: #fff;
         }
 
-        .btn:hover {
+        .btn:hover, #submitButton:hover {
             background-color: #000;
             /* Change the background color on hover */
             color: #ffd700;
         }
+
+
         footer {
   text-align: center;
   padding: 3px;
